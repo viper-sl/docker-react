@@ -2,7 +2,7 @@ FROM node:alpine
 WORKDIR '/app'
 COPY package.json .
 RUN npm install
-COPY frontend .
+COPY reactAppDocker .
 RUN npm run build
 
 FROM nginx
