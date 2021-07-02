@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t viper-sl/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true viper-sl/docker-react npm run test
+
